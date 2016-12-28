@@ -50,10 +50,9 @@ class NotificationRepository implements NotificationDBInterface
      * @param int $notification_id
      * @return int 影响的消息条数
      */
-    public function readOne(array $notification)
+    public function readOne($notification_id)
     {
-        $notification['read'] = 1;
-        return $this->notification->save($notification);
+        return $this->notification->where(['id' => $notification_id])->setField('read', 1);
     }
 
     /**

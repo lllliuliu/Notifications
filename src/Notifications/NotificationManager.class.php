@@ -115,7 +115,7 @@ class NotificationManager implements NotificationInterface
             return 0;
         }
 
-        $rs = $this->notification_repo->readOne($notification);
+        $rs = $this->notification_repo->readOne($notification_id);
 
         if ($rs===false) {
             $error = '操作失败！';
